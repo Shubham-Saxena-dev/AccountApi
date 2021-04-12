@@ -14,7 +14,7 @@ import (
 const (
 	Database   = "goMongo"
 	Collection = "accounts"
-	MongoDbUrl = "mongodb://localhost:27017/"
+	MongoDbUrl = "mongodb://mongodb:27017/"
 )
 
 var collection *mongo.Collection
@@ -41,6 +41,7 @@ func main() {
 
 func initDatabase() {
 
+	log.Info("Connecting to datastore")
 	clientOptions := options.Client().ApplyURI(MongoDbUrl)
 	client, err := mongo.Connect(ctx, clientOptions)
 	if err != nil {

@@ -100,5 +100,7 @@ func (a *accountController) DeleteAccount() gin.HandlerFunc {
 
 func handleError(context *gin.Context, err error, statusCode int) {
 	log.Error(err)
-	context.AbortWithError(statusCode, err)
+	context.JSON(statusCode, gin.H{
+		"error": err.Error(),
+	})
 }
