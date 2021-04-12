@@ -1,6 +1,7 @@
 # AccountApi
 
 Basic CRUD operations using GO/GIN rest framework and mongodb. Also the app is dockerized.
+
 Run:
 
 docker-compose up
